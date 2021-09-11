@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)q_sx2b_c8+y)^oy5)5y^1o+27#nyg9i1s#j&*9t6pau%u#-#(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'schedule_classes',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'kalvi_internship.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'schedules',
+        'USER': 'root',
+        'PASSWORD': 'Raka@1211',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
